@@ -8,7 +8,7 @@ build: clean-up ## Generate Date
 	@echo "Building new file"
 	@echo "Author: Harsha" > test.out
 	@echo "$(DATE)" >> test.out
-  echo "Build Completed"
+	@echo "Build Completed"
 
 
 help: ## Shows the help
