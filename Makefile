@@ -2,14 +2,13 @@ DATE = $(shell date)
 
 clean-up: ## Delete Files
 	@echo "Cleaning Up"
-	rm -f test.out
+	rm -f output.html
+	cp output.html.original output.html
 
 build: clean-up ## Generate Date
-	@echo "Building new file"
-	@echo "Author: Harsha" > test.out
-	@echo "$(DATE)" >> test.out
-	@echo "Build Completed"
-
+	@echo "Rebuilding Static Website"
+	sed -i "s/UPDATE_ME/$(DATE)/g" output.html
+	@echo "Rebuild Completed"
 
 help: ## Shows the help
 	@echo 'Usage: make <OPTIONS> ... <TARGETS>'
